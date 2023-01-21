@@ -1,0 +1,81 @@
+<div class=" pt-5" id="employee">
+    <div class="row justify-content-sm-center pt-5">
+        <div class="col-sm-6 shadow round pb-3" id="emp">
+          <h1 class="text-center pt-3 text-secondary">Employee Details</h1>
+            <form [formGroup]="exform" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <label class="col-form-label">Name:</label>
+
+                <input name="name" formControlName="name" type="text"class="form-control"  placeholder="Username">
+              </div>
+              <div *ngIf="this.exform.get('name')?.touched&&this.exform.get('name')?.errors" style="color: red">
+                Invalid UserName
+              </div>
+              <div class="form-group">
+                <label class="col-form-label">Address:</label>
+
+                <textarea name="address" formControlName="address" type="textarea" class="form-control" placeholder="Address"></textarea>
+              </div>
+              <div *ngIf="this.exform.get('address')?.touched&&this.exform.get('address')?.errors" style="color: red">
+                Invalid Address
+              </div>
+              <div class="form-group">
+                <label class="col-form-label">Dob</label>
+                <input name="dateob"formControlName="dateob" type="date" class="form-control">
+                <div *ngIf="this.exform.get('dateob')?.touched&&this.exform.get('dateob')?.errors" style="color: red">
+                  Invalid Date Of Birth
+                </div>
+
+            </div>
+            <div class="form-group">
+              <label class="col-form-label">Phone:</label>
+              <input name="phone" formControlName="phone" type="text" class="form-control" >
+            </div>
+              <div *ngIf="this.exform.get('phone')?.touched&&this.exform.get('phone')?.errors" style="color: red">
+                Phone no is Required(minimum length 10)
+
+              </div>
+              <label class="col-form-label">Role:</label>
+
+              <div class="form-group">
+                <select  name="role" formControlName="role" class="form-select" aria-label="Default select example">
+                    <option name="1">Admin</option>
+                    <option name="2">Manager</option>
+                    <option name="3">HR</option>
+                    <option name="3">Developer</option>
+
+                  </select>
+
+            </div> 
+            <div class="form-group">
+              <label class='col-form-label'>Gender</label>
+             <div class="form-control">
+              <div  class="form-check"  name="gender" formControlName="gender" >
+              
+                  <input  class="form-check-input" value="Female" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="col-form-label" for="flexRadioDefault1">
+                    Female
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" value="Male"type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                  <label class="col-form-label" for="flexRadioDefault2">
+                    Male
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input"  value="Others"type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                  <label class="col-form-label" for="flexRadioDefault2">
+                    Others
+                  </label>
+                </div>
+             </div>
+             </div>
+                <button   type="submit" class="btn mt-3 p-2 btn-light">Submit</button>
+              </form>
+        </div>
+    </div>
+  </div>
+  
+
+  

@@ -1,0 +1,13 @@
+button{
+    justify-content: center;
+    text-align: center;
+    margin-left: 350px;  
+ 
+}
+#employee{
+    width: 100%;
+background: linear-gradient(to bottom right, white,rgb(230, 228, 228));
+}
+#emp{
+border-radius: 20px;
+}
